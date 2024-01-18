@@ -10,7 +10,7 @@ use App\Models\Event;
 class EventController extends Controller
 {
     public function index() {
-        $events = Event::orderBy("created_at")->get();
+        $events = Event::orderByDesc("created_at")->get();
         return response()->json($events);
     }
 }
